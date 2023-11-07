@@ -3,25 +3,18 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
-  final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist, Colors.green),
-    ShopItem("Tambah Item", Icons.add_shopping_cart, Colors.blue),
-    ShopItem("Logout", Icons.logout, Colors.purple),
+  final List<InventoryItem> items = [
+    InventoryItem("Lihat Item", Icons.checklist, Colors.green),
+    InventoryItem("Tambah Item", Icons.add_shopping_cart, Colors.blue),
+    InventoryItem("Logout", Icons.logout, Colors.purple),
   ];
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  // Homepage aplikasi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor : Colors.black,
+        backgroundColor: Colors.black,
         title: const Text(
           'InventoReal',
           style: TextStyle(color: Color.fromARGB(255, 95, 196, 95)),
@@ -55,9 +48,9 @@ class MyHomePage extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                children: items.map((ShopItem item) {
+                children: items.map((InventoryItem item) {
                   // Iterasi untuk setiap item
-                  return ShopCard(item);
+                  return InventoryCard(item);
                 }).toList(),
               ),
             ],
@@ -68,17 +61,17 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class ShopItem {
+class InventoryItem {
   final String name;
   final IconData icon;
   final Color color;
-  ShopItem(this.name, this.icon, this.color);
+  InventoryItem(this.name, this.icon, this.color);
 }
 
-class ShopCard extends StatelessWidget {
-  final ShopItem item;
+class InventoryCard extends StatelessWidget {
+  final InventoryItem item;
 
-  const ShopCard(this.item, {super.key}); // Constructor
+  const InventoryCard(this.item, {super.key}); // Constructor
 
   @override
   Widget build(BuildContext context) {
