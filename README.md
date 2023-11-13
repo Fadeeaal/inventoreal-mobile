@@ -206,3 +206,22 @@ Stateless widget dalam Flutter adalah komponen UI yang tidak berubah setelah dib
 - SnackBar: Pesan singkat yang ditampilkan di bagian bawah layar, biasanya digunakan untuk feedback ringkas
 
 - InventoryCard: Widget buatan sendiri yang menggunakan beberapa widget di atas untuk menampilkan informasi tentang item inventori dalam bentuk card
+
+## Tugas 8
+### Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah item baru dengan ketentuan sebagai berikut:
+Memakai minimal tiga elemen input, yaitu name, amount, description. Tambahkan elemen input sesuai dengan model pada aplikasi tugas Django yang telah kamu buat.
+Memiliki sebuah tombol Save.
+Setiap elemen input di formulir juga harus divalidasi dengan ketentuan sebagai berikut:
+Setiap elemen input tidak boleh kosong.
+Setiap elemen input harus berisi data dengan tipe data atribut modelnya.
+Mengarahkan pengguna ke halaman form tambah item baru ketika menekan tombol Tambah Item pada halaman utama.
+Memunculkan data sesuai isi dari formulir yang diisi dalam sebuah pop-up setelah menekan tombol Save pada halaman formulir tambah item baru.
+Membuat sebuah drawer pada aplikasi dengan ketentuan sebagai berikut:
+Drawer minimal memiliki dua buah opsi, yaitu Halaman Utama dan Tambah Item.
+Ketika memiih opsi Halaman Utama, maka aplikasi akan mengarahkan pengguna ke halaman utama.
+Ketika memiih opsi (Tambah Item), maka aplikasi akan mengarahkan pengguna ke halaman form tambah item baru.
+
+Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+Bagaimana penerapan clean architecture pada aplikasi Flutter?
