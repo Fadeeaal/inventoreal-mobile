@@ -616,8 +616,6 @@ Berikut adalah beberapa layout widget pada Flutter dan konteks penggunaannya:
 
 16. `Table`: Mengatur widget dalam tabel berbasis sel yang dapat mengatur widget dalam baris dan kolom.
 
-17. `Flow`: Mengatur widget dalam tata letak berbasis aliran yang dapat mengatur widget dalam satu atau beberapa arah.
-
 ### Elemen Input pada Form yang Digunakan dan Alasannya
 Saya menggunakan `TextFormField` dengan _input validation_ untuk menerima input teks seperti nama produk, kategori produk, jumlah, harga, dan deskripsi. Khusus untuk jumlah dam harga, saya lakukan validasi dengan percobaan parse menjadi `int`.
 
