@@ -196,12 +196,14 @@ class _ItemFormPageState extends State<ItemFormPage> {
                         // Kirim ke Django dan tunggu respons
                         // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                         final response = await request.postJson(
-                        "http://127.0.0.1:8000/create-flutter/",
+                        "https://rakha-fadil-tugas.pbp.cs.ui.ac.id/create-flutter/",
                         jsonEncode(<String, String>{
+                            // TODO: Sesuaikan field data sesuai dengan aplikasimu
                             'name': _name,
                             'price': _price.toString(),
                             'description': _description,
-                            // TODO: Sesuaikan field data sesuai dengan aplikasimu
+                            'category': _category,
+                            'amount': _amount.toString(),
                         }));
                         if (response['status'] == 'success') {
                           if (!context.mounted) return;
