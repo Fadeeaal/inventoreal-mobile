@@ -57,8 +57,7 @@ class _ItemsPageState extends State<ItemsPage> {
                             children: <Widget>[
                               Text("Category: ${item.category}"),
                               Text("Amount: ${item.amount}"),
-  
-                              Text("Price: ${item.price} BP"),
+                              Text("Price: ${item.price}"),
                               Text("Description: ${item.description}"),
                             ],
                           ),
