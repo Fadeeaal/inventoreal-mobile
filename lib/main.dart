@@ -8,22 +8,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-    const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-    @override
-    Widget build(BuildContext context) {
-        return Provider(
-            create: (_) {
-                CookieRequest request = CookieRequest();
-                return request;
-            },
-            child: MaterialApp(
-                title: 'InventoReal',
-                theme: ThemeData(
-                    colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-                    useMaterial3: true,
-                ),
-                home: const LoginPage()),
-            );
-    }
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+      child: MaterialApp(
+          title: 'InventoReal',
+          theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 67, 179, 70)),
+              useMaterial3: true,
+          ),
+        home: const LoginPage()),
+    );
+  }
 }
