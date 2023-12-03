@@ -196,17 +196,16 @@ class _ItemFormPageState extends State<ItemFormPage> {
                         // Kirim ke Django dan tunggu respons
                         // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                         final response = await request.postJson(
-                        "https://rakha-fadil-tugas.pbp.cs.ui.ac.id/create-flutter/",
+                        "http://127.0.0.1:8000/create-flutter/",
                         jsonEncode(<String, String>{
-                            // TODO: Sesuaikan field data sesuai dengan aplikasimu
                             'name': _name,
+                            'categories': _category,
                             'price': _price.toString(),
-                            'description': _description,
-                            'category': _category,
                             'amount': _amount.toString(),
+                            'description': _description,
                         }));
                         if (response['status'] == 'success') {
-                          if (!context.mounted) return;
+                            if (!context.mounted) return;
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
                             content: Text("Produk baru berhasil disimpan!"),
@@ -216,7 +215,7 @@ class _ItemFormPageState extends State<ItemFormPage> {
                                 MaterialPageRoute(builder: (context) => MyHomePage()),
                             );
                         } else {
-                          if (!context.mounted) return;
+                            if (!context.mounted) return;
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
                                 content:
@@ -224,7 +223,48 @@ class _ItemFormPageState extends State<ItemFormPage> {
                             ));
                         }
                     }
-                },
+                  },
+                  // onPressed: () async {
+                  //   if (_formKey.currentState!.validate()) {
+                  //     items.add(Item(
+                  //       name: _name,
+                  //       category: _category,
+                  //       amount: _amount,
+                  //       price: _price,
+                  //       description: _description,
+                  //     ));
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (context) {
+                  //         return AlertDialog(
+                  //           title: const Text('Item saved successfully'),
+                  //           content: SingleChildScrollView(
+                  //             child: Column(
+                  //               crossAxisAlignment: CrossAxisAlignment.start,
+                  //               children: [
+                  //                 // Memunculkan value-value lainnya
+                  //                 Text('Name: $_name'),
+                  //                 Text('Category: $_category'),
+                  //                 Text('Amount: $_amount'),
+                  //                 Text('Price: $_price'),
+                  //                 Text('Description: $_description')
+                  //               ],
+                  //             ),
+                  //           ),
+                  //           actions: [
+                  //             TextButton(
+                  //               child: const Text('OK'),
+                  //               onPressed: () {
+                  //                 Navigator.pop(context);
+                  //               },
+                  //             ),
+                  //           ],
+                  //         );
+                  //       },
+                  //     );
+                  //     _formKey.currentState!.reset();
+                  //   }
+                  // },
                   child: const Text(
                     "Save",
                     style: TextStyle(color: Colors.white),
